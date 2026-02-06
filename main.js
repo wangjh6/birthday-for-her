@@ -48,7 +48,7 @@ function startSlideshow() {
     const counter = document.getElementById("photoCounter");
 
     // 初始化第一张
-    img.src = `images/1.png`;
+    img.src = `images/1.jpg`;
     counter.innerText = `1 / ${totalPhotos}`;
     img.style.opacity = 1;
 
@@ -66,7 +66,7 @@ function startSlideshow() {
 
         setTimeout(() => {
             currentPhoto++;
-            img.src = `images/${currentPhoto}.png`;
+            img.src = `images/${currentPhoto}.jpg`;
             counter.innerText = `${currentPhoto} / ${totalPhotos}`;
             img.style.opacity = 1;
 
@@ -221,4 +221,5 @@ function startFireworks() {
     // 定时生成烟花（温柔，不密集）
     setInterval(createFirework, 900);
 }
+
 
