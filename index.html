@@ -11,7 +11,7 @@
 <body>
 
     <!-- 🎶 背景音乐 -->
-    <audio id="bgm" loop>
+    <audio id="bgm" preload="none" loop>
         <source src="voices/music.mp3" type="audio/mpeg">
     </audio>
 
@@ -53,7 +53,7 @@
         <p id="voiceCounter">1 / 5</p>
 
         <!-- 语音播放器 -->
-        <audio id="voicePlayer"></audio>
+        <audio id="voicePlayer" preload="none"></audio>
     </section>
 
 
@@ -86,4 +86,5 @@
 
 
 </html>
+
 
