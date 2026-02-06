@@ -221,5 +221,10 @@ function startFireworks() {
     // 定时生成烟花（温柔，不密集）
     setInterval(createFirework, 900);
 }
+window.addEventListener("load", () => {
+  document.body.classList.add("loaded");
+});
+
+
 
 
