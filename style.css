@@ -8,6 +8,12 @@ body {
             #fff6f9 0%,
             #ffeef3 40%,
             #fffafc 100%);
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+body.loaded {
+  opacity: 1;
 }
 
 body::before {
@@ -130,4 +136,5 @@ h2 {
 #secret p {
     position: relative;
     z-index: 1;
+
 }
