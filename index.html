@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Birthday 🎂</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- 🎶 背景音乐 -->
+    <audio id="bgm" loop>
+        <source src="/static/music.mp3" type="audio/mpeg">
+    </audio>
+
+
+    <!-- 🏠 首页 -->
+    <section id="home" class="page active">
+        <h1>🎉 生日快乐，小侯同学</h1>
+        <p>我们为你准备了一点小惊喜</p>
+
+        <div class="buttons">
+            <button onclick="showPage('photos')">📸 开始看看照片</button>
+        </div>
+    </section>
+
+
+    <!-- 📸 照片页 -->
+    <section id="photos" class="page">
+        <h2>📸 我们的回忆</h2>
+
+        <div class="slideshow">
+            <img id="photo" src="images/1.jpg">
+        </div>
+        <p id="photoCounter">1 / 16</p>
+
+    </section>
+
+
+
+
+
+    <!-- 💌 留言页 -->
+    <section id="wishes" class="page">
+        <h2>🎧 有些话，想亲口对你说</h2>
+        <p id="voiceTitle">来自 君</p>
+        <button id="playBtn" onclick="playVoice()">
+            ▶️ 播放语音
+        </button>
+
+        <p id="voiceCounter">1 / 5</p>
+
+        <!-- 语音播放器 -->
+        <audio id="voicePlayer"></audio>
+    </section>
+
+
+    <!-- 🎁 彩蛋页 -->
+    <section id="secret" class="page">
+        <canvas id="fireworks"></canvas>
+
+        <p>这一页，我们只想认真告诉你一件事。</p>
+
+        <p>
+            无论你现在走得多快，走到哪里，<br>
+            都有人在你身后，真心地祝福你。
+        </p>
+
+        <p style="margin-top:30px;">
+            🎂 生日快乐，愿你永远被温柔以待。
+        </p>
+    </section>
+    <!-- 放大查看层 -->
+    <div id="photoModal">
+        <img id="modalImg">
+        <p id="modalText"></p>
+    </div>
+
+
+    <script src="main.js"></script>
+
+
+</body>
+
+</html>
