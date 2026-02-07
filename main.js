@@ -89,6 +89,7 @@ const voices = [
     { name: "王景慧", file: "5.m4a" },
     { name: "杜海帆", file: "6.m4a" },
     { name: "吴茹琪", file: "7.m4a" },
+    { name: "杨屹卓", file: "8.m4a" }
 ];
 
 let currentVoice = 0;
@@ -146,5 +147,6 @@ function nextVoice() {
 
 // 初始加载
 updateVoiceUI();
+
 
 
