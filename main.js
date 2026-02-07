@@ -103,6 +103,7 @@ function updateVoiceUI() {
 
 function playVoice() {
     bgm.volume = 0.05;   // 背景音乐变小
+    voice.volume = 0.85
     voicePlayer.play();
 }
 voicePlayer.onended = () => {
@@ -224,6 +225,7 @@ function startFireworks() {
 window.addEventListener("load", () => {
   document.body.classList.add("loaded");
 });
+
 
 
 
