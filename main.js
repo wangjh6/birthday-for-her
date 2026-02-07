@@ -25,9 +25,6 @@ function showPage(pageId) {
         musicStarted = true;
         startSlideshow();
     }
-    if (pageId === "secret") {
-        startFireworks();
-    }
 
 }
 
@@ -83,11 +80,13 @@ function startSlideshow() {
 
 // ---------- 语音留言 ----------
 const voices = [
-    { name: "君", file: "1.m4a" },
-    { name: "璐", file: "2.m4a" },
-    { name: "月", file: "3.m4a" },
-    { name: "悦", file: "4.m4a" },
-    { name: "慧", file: "5.m4a" }
+    { name: "朱桂君", file: "1.m4a" },
+    { name: "代璐", file: "2.m4a" },
+    { name: "符宝月", file: "3.m4a" },
+    { name: "杨雨悦", file: "4.m4a" },
+    { name: "王景慧", file: "5.m4a" },
+    { name: "杜海帆", file: "6.m4a" },
+    { name: "吴茹琪", file: "7.m4a" },
 ];
 
 let currentVoice = 0;
@@ -122,6 +121,10 @@ voicePlayer.onended = () => {
         bgm.volume = 0.4; // 恢复背景音乐
         setTimeout(() => {
             showPage("secret");
+            setTimeout(() => {
+                // ⭐ 再跳到真实烟花页面
+                window.location.href = "https://nianbroken.github.io/Firework_Simulator/";
+            }, 3000);
         }, 2000);
     }
 };
@@ -142,89 +145,7 @@ function nextVoice() {
 
 // 初始加载
 updateVoiceUI();
-// ---------- 🎆 烟花效果 ----------
-let fireworksStarted = false;
 
-function startFireworks() {
-    if (fireworksStarted) return;
-    fireworksStarted = true;
-
-    const canvas = document.getElementById("fireworks");
-    const ctx = canvas.getContext("2d");
-
-    function resize() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-    }
-    resize();
-    window.addEventListener("resize", resize);
-
-    const fireworks = [];
-
-    function random(min, max) {
-        return Math.random() * (max - min) + min;
-    }
-
-    function createFirework() {
-        const x = random(100, canvas.width - 100);
-        const y = random(100, canvas.height / 2);
-        const particles = [];
-
-        for (let i = 0; i < 40; i++) {
-            particles.push({
-                x,
-                y,
-                angle: random(0, Math.PI * 2),
-                speed: random(1, 4),
-                alpha: 1,
-                radius: random(2, 3),
-                color: `hsl(${random(0, 360)}, 80%, 60%)`
-            });
-        }
-
-        fireworks.push(particles);
-    }
-
-    function update() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-        fireworks.forEach((particles, index) => {
-            particles.forEach(p => {
-                p.x += Math.cos(p.angle) * p.speed;
-                p.y += Math.sin(p.angle) * p.speed;
-                p.alpha -= 0.015;
-
-                ctx.beginPath();
-                ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-                ctx.fillStyle = `rgba(${hexToRgb(p.color)},${p.alpha})`;
-                ctx.fill();
-            });
-
-            if (particles[0].alpha <= 0) {
-                fireworks.splice(index, 1);
-            }
-        });
-
-        requestAnimationFrame(update);
-    }
-
-    function hexToRgb(hsl) {
-        const temp = document.createElement("div");
-        temp.style.color = hsl;
-        document.body.appendChild(temp);
-        const rgb = getComputedStyle(temp).color;
-        document.body.removeChild(temp);
-        return rgb.match(/\d+/g).slice(0, 3).join(",");
-    }
-
-    update();
-
-    // 定时生成烟花（温柔，不密集）
-    setInterval(createFirework, 900);
-}
-window.addEventListener("load", () => {
-  document.body.classList.add("loaded");
-});
 
 
 
