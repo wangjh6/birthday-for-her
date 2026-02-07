@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Happy Birthday 🎂</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 
 <body>
 
     <!-- 🎶 背景音乐 -->
-    <audio id="bgm" preload="none" loop>
-        <source src="voices/music.mp3" type="audio/mpeg">
+    <audio id="bgm" loop>
+        <source src="/static/voices/music.mp3" type="audio/mpeg">
     </audio>
 
 
@@ -32,7 +32,7 @@
         <h2>📸 我们的回忆</h2>
 
         <div class="slideshow">
-            <img id="photo" src="images/1.jpg" loading="lazy">
+            <img id="photo" src="/static/images/1.jpg">
         </div>
         <p id="photoCounter">1 / 16</p>
 
@@ -53,13 +53,10 @@
         <p id="voiceCounter">1 / 7</p>
 
         <!-- 语音播放器 -->
-        <audio id="voicePlayer" preload="none"></audio>
+        <audio id="voicePlayer"></audio>
     </section>
 
-
-    <!-- 🎁 彩蛋页 -->
     <section id="secret" class="page">
-        <canvas id="fireworks"></canvas>
 
         <p>这一页，我们只想认真告诉你一件事。</p>
 
@@ -76,16 +73,10 @@
         </p>
     </section>
 
-    <script src="main.js"></script>
+
+    <script src="/static/js/main.js"></script> <!-- 你的生日网页逻辑 -->
 
 
 </body>
 
-
 </html>
-
-
-
-
-
-
