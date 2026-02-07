@@ -100,7 +100,6 @@ function updateVoiceUI() {
     voiceCounter.innerText = `${currentVoice + 1} / ${voices.length}`;
     voicePlayer.src = `voices/${voices[currentVoice].file}`;
     voicePlayer.volume = 0.85; // ⭐ 提高语音音量
-    voicePlayer.preload = "none"; // ⭐ 避免提前加载卡顿
 }
 
 function playVoice() {
@@ -226,6 +225,7 @@ function startFireworks() {
 window.addEventListener("load", () => {
   document.body.classList.add("loaded");
 });
+
 
 
 
