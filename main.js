@@ -47,7 +47,7 @@ function startSlideshow() {
     const counter = document.getElementById("photoCounter");
 
     // 初始化第一张
-    img.src = `/static/images/1.jpg`;
+    img.src = `images/1.jpg`;
     counter.innerText = `1 / ${totalPhotos}`;
     img.style.opacity = 1;
 
@@ -65,7 +65,7 @@ function startSlideshow() {
 
         setTimeout(() => {
             currentPhoto++;
-            img.src = `/static/images/${currentPhoto}.jpg`;
+            img.src = `images/${currentPhoto}.jpg`;
             counter.innerText = `${currentPhoto} / ${totalPhotos}`;
             img.style.opacity = 1;
 
@@ -99,7 +99,7 @@ const voiceCounter = document.getElementById("voiceCounter");
 function updateVoiceUI() {
     voiceTitle.innerText = `来自 ${voices[currentVoice].name}`;
     voiceCounter.innerText = `${currentVoice + 1} / ${voices.length}`;
-    voicePlayer.src = `/static/voices/${voices[currentVoice].file}`;
+    voicePlayer.src = `voices/${voices[currentVoice].file}`;
 }
 
 function playVoice() {
@@ -146,4 +146,5 @@ function nextVoice() {
 
 // 初始加载
 updateVoiceUI();
+
 
